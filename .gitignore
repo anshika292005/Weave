@@ -1,0 +1,66 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+backend/.venv/
+.env
+!.env.example
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Node.js
+node_modules/
+.next/
+out/
+build/
+dist/
+.npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Testing
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+backend/uploads/
+backend/db/*.sqlite3
+.pipelines/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Uploads (keep directory structure, ignore all uploaded files)
+uploads/*
+!uploads/.gitkeep
+
+# Logs and debug output
+*.log
+test.db
+debug_log.txt
+
+# Temporary test/debug output files (root and backend)
+test_*.txt
+test_*.log
+*_error.txt
+*_error.log
+*_output.txt
+*_output.log
