@@ -246,6 +246,145 @@
   animation: fade-in-down 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Landing hero sketch (shown when no Rive file is present) */
+@keyframes weave-chunk {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  60% {
+    transform: translateX(104px);
+    opacity: 1;
+  }
+
+  75%,
+  100% {
+    transform: translateX(104px);
+    opacity: 0;
+  }
+}
+
+@keyframes weave-scan {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  10%,
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(196px);
+    opacity: 0;
+  }
+}
+
+@keyframes weave-link {
+  0%,
+  45% {
+    stroke-dashoffset: 80;
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  65%,
+  90% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes weave-hit {
+  0%,
+  55% {
+    opacity: 0;
+  }
+
+  65%,
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes weave-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.35;
+  }
+
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.weave-chunk {
+  opacity: 0;
+  animation: weave-chunk 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.weave-scan {
+  animation: weave-scan 6s linear infinite;
+}
+
+.weave-link {
+  stroke-dasharray: 80;
+  animation: weave-link 6s ease-out infinite;
+}
+
+.weave-hit {
+  opacity: 0;
+  animation: weave-hit 6s ease-out infinite;
+}
+
+.weave-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: weave-pulse 3s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .weave-chunk,
+  .weave-scan,
+  .weave-link,
+  .weave-hit,
+  .weave-pulse {
+    animation: none;
+  }
+
+  .weave-chunk,
+  .weave-hit,
+  .weave-link {
+    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+
+  .weave-scan,
+  .weave-pulse {
+    opacity: 0;
+  }
+}
+
 .bg-glass {
   @apply bg-white/80 backdrop-blur-md border border-gray-200 shadow-sm;
 }
